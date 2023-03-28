@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+* {
+    -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+     -ms-box-sizing: border-box;
+     box-sizing: border-box;
+}
+
+body {
+    background-color: #BFACE2;
+}
+
+.wrapper {
+    width: 100%;
+    font-family: 'Anton', sans-serif;
+    color: #3E54AC;
+    background-color: #BFACE2;	
+}
+
+.container-fluid {
+  width: 1000px;
+  max-width: 100%;
+}
+
+.title h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: 50px;
+    letter-spacing: 1.5px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 30px 0;
+}
+
+#player-one,#player-two{
+    background-color: #CBEDD5;
+    height: 10rem;
+    margin-top: 3rem;
+}
+
+input {
+    padding-left: 5%;
+    background-color: transparent;
+    border: 1px;
+    font-size: 25px;
+    text-align: center;
+    width: 80%;
+    color: black;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.increase-btn , .decrease-btn {
+    font-size: 50px;
+}
+
+i.fa.fa-pencil {
+    font-size: 30px;
+    color: black;
+}
+
+.score-display {
+   font-size: 50px;
+   color: black;
+}
+
+#reset-btn, #add-player {
+  font-size: 35px;
+  display: block;
+  text-align: center;
+  color: #3E54AC; 
+  background-color: transparent;
+  border-color: transparent;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.playing-to {
+text-align: center;
+padding: 30px 0;
+font-size: 35px;
+}
+
+input[type="number"] {
+    width: min-content;
+    font-size: 35px;
+    color: #3E54AC; 
+}
+
+
+
+
+
+@media screen and (max-width: 665px) {
+  h1#player-name, h2.score-display {
+      font-size: 26px;
+      margin-top: 25px;
+      white-space: nowrap;
+  }
+  .increase-btn, .decrease-btn {
+      font-size: 40px;
+      
+  }
+  .delete-btn {
+      font-size: 18px;
+  }
+  #reset-btn, #add-player {
+      font-size: 32px;
+  }
+}
+@media screen and (max-width: 575px) {
+  h1#player-name, h2.score-display {
+      font-size: 22px;
+      margin-top: 28px;
+  }
+  h1#player-name {
+      text-align: left;		
+  }
+  i.fa.fa-pencil {
+      padding-right: 5px;
+      font-size: 22px;
+  }
+  .delete-btn {
+      padding: 7px 0 5px 5px;
+  }	    
+  #reset-btn, #add-player {
+      font-size: 28px;
+  }
+  .reset-player i.fa.fa-refresh, .add-player i.fa.fa-user-plus {
+      font-size: 24px;
+  }
+}
+@media screen and (max-width: 490px){
+  .increase-btn, .decrease-btn {
+      font-size: 34px;
+      margin-top: 10px;
+  }
+  i.fa.fa-pencil {
+      font-size: 18px;
+  }
+  .player-name {
+      padding-right: 0;
+  }
+  h1#player-name, h2.score-display {
+      font-size: 18px;
+      margin-top: 26px;
+  }
+  .delete-btn {
+      font-size: 16px;
+  }
+  .reset-player, .add-player {
+      width: 100%;
+  }
+  #reset-btn, #add-player {
+      font-size: 28px;
+      padding: 8px;
+  }
+}
+
+
+
+
+
+
+
+
+
+

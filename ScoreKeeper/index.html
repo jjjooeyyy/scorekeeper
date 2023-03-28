@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score Keeper</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://kit.fontawesome.com/b9529cebfd.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class= "container-fluid">
+			<div class="row title">
+				<div class="col-xs-12 title">
+				  <h1>ScoreKeeper</h1>
+				</div>
+			</div>
+    
+    <div class="row align-items-center text-center" id="player-one">
+        <div class="col-xl-3 increase">
+            <button type="button" class="btn btn-default increase-btn">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+        <div class="col-xl-3 player-name">
+            <i class="fa fa-pencil" aria-hidden="true"></i><br><input type="text" placeholder="Name" class="name">
+        </div>
+        <div class="col-xl-3 score">
+            <h3 class="score-display">0</h3>
+        </div>
+        <div class="col-xl-3 decrease">
+            <button type="button" class="btn btn-default decrease-btn">
+                <i class="fa-solid fa-minus"></i>
+            </button>
+        </div> 
+    </div>
+
+ 
+				
+    <div class="row align-items-center text-center" id="player-two">
+        <div class="col-xl-3 increase">
+            <button type="button" class="btn btn-default increase-btn">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+        <div class="col-xl-3 player-name">
+            <i class="fa fa-pencil" aria-hidden="true"></i><br><input type="text" placeholder="Name" class="name">
+        </div>
+        <div class="col-xl-3 score">
+            <h3 class="score-display">0</h3>
+        </div>
+        <div class="col-xl-3 decrease">
+            <button type="button" class="btn btn-default decrease-btn">
+                <i class="fa-solid fa-minus"></i>
+            </button>
+        </div> 
+    </div>
+    </div>
+		
+    <div class="row end-section">
+        <div class="col-xl-6 playing-to">
+            <p>Playing to:<input type="number" value="0" max="10" min="0"></p>
+        </div>
+        <div class="col-xl-6 reset-player">
+            <button id="reset-btn"><i class="fa fa-refresh" aria-hidden="true"></i> Reset</button>
+        </div>
+
+
+</div>		
+
+</html>
