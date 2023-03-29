@@ -1,55 +1,79 @@
-const p1 = {
-    score: 0,
-    button: document.querySelector('#p1Button'),
-    display: document.querySelector('#p1Display')
-}
-const p2 = {
-    score: 0,
-    button: document.querySelector('#p2Button'),
-    display: document.querySelector('#p2Display')
-}
+"use strict"
 
-const resetButton = document.querySelector('#reset');
-const winningScoreSelect = document.querySelector('#playto');
-let winningScore = 3;
+let message = document.querySelector(".message");
+
+let score1 = document.querySelector(".score-display-1");
+
+let score2 = document.querySelector(".score-display-2");
+
+let playingTo = document.querySelector("#playing-to");
+
+let winningScore = 0; //by default
+
+let selectTotalScore = document.querySelector('#playing-to');
+
 let isGameOver = false;
 
-function updateScores(player, opponent) {
-    if (!isGameOver) {
-        player.score += 1;
-        if (player.score === winningScore) {
-            isGameOver = true;
-            player.display.classList.add('has-text-success');
-            opponent.display.classList.add('has-text-danger');
-            player.button.disabled = true;
-            opponent.button.disabled = true;
-        }
-        player.display.textContent = player.score;
+let p1Plus = document.querySelector('.p1-increase-btn');
+
+let p1Minus = document.querySelector('.p1-decrease-btn');
+
+let p2Minus = document.querySelector('.p2-decrease-btn');
+
+let p2Plus = document.querySelector('.p2-increase-btn');
+
+
+// Player Name 
+let player1Name = document.querySelector('#name1');
+document.querySelector('#p1-name').addEventListener('click', function() {
+  console.log(player1Name.value);
+})
+
+let player2Name = document.querySelector('#name2');
+document.querySelector('#p2-name').addEventListener('click', function() {
+    console.log(player2Name.value);
+  })
+
+// Select Winning Score
+selectTotalScore.addEventListener('change', function(){
+    winningScore = selectTotalScore.value;
+    message.textContent = `The winning score is setted to ${winningScore} !`;
+})
+
+// PLUS Handler
+p1Plus.addEventListener('click', function(){
+    if(winningScore > score1.textContent) {
+       score1.textContent++;
+    } 
+    if(score1.textContent === winningScore) {
+        console.log("WIN");
+        message.textContent = `${player1Name.value} is win`;
+     }
+})
+
+p2Plus.addEventListener('click', function(){
+    if(winningScore > score2.textContent) {
+       score2.textContent++;
+    } 
+    if(score2.textContent === winningScore) {
+        console.log("WIN");
+        message.textContent = `${player2Name.value} is win`;
+     }
+})
+
+// Minus Handler 
+p1Minus.addEventListener('click', function(){
+   if(score1.textContent > -(winningScore)) {
+    score1.textContent--;
+   }
+})
+
+p2Minus.addEventListener('click', function(){
+    if(score2.textContent > -(winningScore)) {
+     score2.textContent--;
     }
-}
+ })
 
-
-p1.button.addEventListener('click', function () {
-    updateScores(p1, p2)
-})
-p2.button.addEventListener('click', function () {
-    updateScores(p2, p1)
-})
-
-
-winningScoreSelect.addEventListener('change', function () {
-    winningScore = parseInt(this.value);
-    reset();
-})
-
-resetButton.addEventListener('click', reset)
-
-function reset() {
-    isGameOver = false;
-    for (let p of [p1, p2]) {
-        p.score = 0;
-        p.display.textContent = 0;
-        p.display.classList.remove('has-text-success', 'has-text-danger');
-        p.button.disabled = false;
-    }
-}
+ if(document.querySelector('#name2').value != "") {
+    console.log(player2Name.value);
+ }
