@@ -12,7 +12,7 @@ let winningScore = 0; //by default
 
 let selectTotalScore = document.querySelector('#playing-to');
 
-let isGameOver = false;
+let resetBtn = document.querySelector('#reset-btn');
 
 let p1Plus = document.querySelector('.p1-increase-btn');
 
@@ -22,22 +22,14 @@ let p2Minus = document.querySelector('.p2-decrease-btn');
 
 let p2Plus = document.querySelector('.p2-increase-btn');
 
-
-// Player Name 
+// Store Player Name 
 let player1Name = document.querySelector('#name1');
-document.querySelector('#p1-name').addEventListener('click', function() {
-  console.log(player1Name.value);
-})
-
 let player2Name = document.querySelector('#name2');
-document.querySelector('#p2-name').addEventListener('click', function() {
-    console.log(player2Name.value);
-  })
 
 // Select Winning Score
 selectTotalScore.addEventListener('change', function(){
     winningScore = selectTotalScore.value;
-    message.textContent = `The winning score is setted to ${winningScore} !`;
+    message.textContent = `📣 The winning score is ${winningScore} ! 📣`;
 })
 
 // PLUS Handler
@@ -47,7 +39,9 @@ p1Plus.addEventListener('click', function(){
     } 
     if(score1.textContent === winningScore) {
         console.log("WIN");
-        message.textContent = `${player1Name.value} is win`;
+        message.textContent = `${player1Name.value} won! 🎉`;
+        document.querySelector("body").style.backgroundColor = "#E96479";
+        document.querySelector(".wrapper").style.backgroundColor = "#E96479";
      }
 })
 
@@ -57,7 +51,9 @@ p2Plus.addEventListener('click', function(){
     } 
     if(score2.textContent === winningScore) {
         console.log("WIN");
-        message.textContent = `${player2Name.value} is win`;
+        message.textContent = `${player2Name.value} won! 🎉`;
+        document.querySelector("body").style.backgroundColor = "#E96479";
+        document.querySelector(".wrapper").style.backgroundColor = "#E96479";
      }
 })
 
@@ -74,6 +70,14 @@ p2Minus.addEventListener('click', function(){
     }
  })
 
- if(document.querySelector('#name2').value != "") {
-    console.log(player2Name.value);
- }
+// Reset
+resetBtn.addEventListener('click', function() {
+   message.textContent = `Start Now 🕰️`;
+   document.querySelector("body").style.backgroundColor = "#BFACE2";
+   document.querySelector(".wrapper").style.backgroundColor = "#BFACE2";
+   score1.textContent = "0";
+   score2.textContent = "0";
+   selectTotalScore.value = 0;
+   player1Name.value = "";
+   player2Name.value = "";
+})
